@@ -3,7 +3,7 @@ package es.ulpgc.eite.cleancode.advclickcounter.clicks;
 import java.util.ArrayList;
 import java.util.List;
 
-import es.ulpgc.eite.cleancode.advclickcounter.app.ClickData;
+import es.ulpgc.eite.cleancode.advclickcounter.data.ClickData;
 
 public class ClickViewModel {
 
