@@ -19,7 +19,7 @@ import es.ulpgc.eite.cleancode.advclickcounter.counters.CounterListActivity;
 
 @RunWith(AndroidJUnit4.class)
 @LargeTest
-public class AdvClickCounterTests {
+public class AdvClickCounterTests { // 36 tests
 
 
     @Rule
