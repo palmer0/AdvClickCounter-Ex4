@@ -1,16 +1,16 @@
-package es.ulpgc.eite.cleancode.advclickcounter.counters;
+package es.ulpgc.eite.cleancode.advclickcounter.clicks;
 
 import java.lang.ref.WeakReference;
 
 import es.ulpgc.eite.cleancode.advclickcounter.app.ClickToCounterState;
 import es.ulpgc.eite.cleancode.advclickcounter.app.CounterToClickState;
 
-public interface CounterContract {
+public interface ClickListContract {
 
   interface View {
     void injectPresenter(Presenter presenter);
 
-    void onDataUpdated(CounterViewModel viewModel);
+    void onDataUpdated(ClickListViewModel viewModel);
   }
 
   interface Presenter {
@@ -32,7 +32,7 @@ public interface CounterContract {
 
     void onDestroy();
 
-    void onCounterButtonPressed();
+    void onClickButtonPressed();
   }
 
   interface Model {
@@ -46,14 +46,14 @@ public interface CounterContract {
   }
 
   interface Router {
-    void navigateToNextScreen();
+    //void navigateToNextScreen();
 
-    void passStateToNextScreen(CounterToClickState state);
+    //void passStateToNextScreen(ClickListState state);
 
-    //CounterState getStateFromPreviousScreen();
+    CounterToClickState getStateFromPreviousScreen();
 
-    ClickToCounterState getStateFromNextScreen();
+    //ClickListState getStateFromNextScreen();
 
-    //void passStateToPreviousScreen(CounterState state);
+    void passStateToPreviousScreen(ClickToCounterState state);
   }
 }

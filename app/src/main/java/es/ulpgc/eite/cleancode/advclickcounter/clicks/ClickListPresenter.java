@@ -1,19 +1,19 @@
-package es.ulpgc.eite.cleancode.advclickcounter.counters;
+package es.ulpgc.eite.cleancode.advclickcounter.clicks;
 
 import java.lang.ref.WeakReference;
 
-import es.ulpgc.eite.cleancode.advclickcounter.app.ClickToCounterState;
+import es.ulpgc.eite.cleancode.advclickcounter.app.CounterToClickState;
 
-public class CounterPresenter implements CounterContract.Presenter {
+public class ClickListPresenter implements ClickListContract.Presenter {
 
-  public static String TAG = CounterPresenter.class.getSimpleName();
+  public static String TAG = ClickListPresenter.class.getSimpleName();
 
-  private WeakReference<CounterContract.View> view;
-  private CounterState state;
-  private CounterContract.Model model;
-  private CounterContract.Router router;
+  private WeakReference<ClickListContract.View> view;
+  private ClickListState state;
+  private ClickListContract.Model model;
+  private ClickListContract.Router router;
 
-  public CounterPresenter(CounterState state) {
+  public ClickListPresenter(ClickListState state) {
     this.state = state;
   }
 
@@ -23,18 +23,16 @@ public class CounterPresenter implements CounterContract.Presenter {
 
     // initialize the state if is necessary
     if (state == null) {
-      state = new CounterState();
+      state = new ClickListState();
     }
 
-    /*
     // use passed state if is necessary
-    CounterState savedState = router.getStateFromPreviousScreen();
+    CounterToClickState savedState = router.getStateFromPreviousScreen();
     if (savedState != null) {
 
       // update the model if is necessary
       model.onDataFromPreviousScreen(savedState.data);
     }
-    */
   }
 
   @Override
@@ -49,13 +47,15 @@ public class CounterPresenter implements CounterContract.Presenter {
   public void onResume() {
     // Log.e(TAG, "onResume()");
 
+    /*
     // use passed state if is necessary
-    ClickToCounterState savedState = router.getStateFromNextScreen();
+    ClickListState savedState = router.getStateFromNextScreen();
     if (savedState != null) {
 
       // update the model if is necessary
       model.onDataFromNextScreen(savedState.data);
     }
+    */
 
     // call the model and update the state
     state.data = model.getStoredData();
@@ -81,22 +81,22 @@ public class CounterPresenter implements CounterContract.Presenter {
   }
 
   @Override
-  public void onCounterButtonPressed() {
+  public void onClickButtonPressed() {
 
   }
 
   @Override
-  public void injectView(WeakReference<CounterContract.View> view) {
+  public void injectView(WeakReference<ClickListContract.View> view) {
     this.view = view;
   }
 
   @Override
-  public void injectModel(CounterContract.Model model) {
+  public void injectModel(ClickListContract.Model model) {
     this.model = model;
   }
 
   @Override
-  public void injectRouter(CounterContract.Router router) {
+  public void injectRouter(ClickListContract.Router router) {
     this.router = router;
   }
 }

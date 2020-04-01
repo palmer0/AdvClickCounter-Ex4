@@ -7,9 +7,9 @@ import java.lang.ref.WeakReference;
 import es.ulpgc.eite.cleancode.advclickcounter.R;
 import es.ulpgc.eite.cleancode.advclickcounter.app.AppMediator;
 
-public class ClickScreen {
+public class ClickListScreen {
 
-  public static void configure(ClickContract.View view) {
+  public static void configure(ClickListContract.View view) {
 
     WeakReference<FragmentActivity> context =
         new WeakReference<>((FragmentActivity) view);
@@ -17,11 +17,11 @@ public class ClickScreen {
     String data = context.get().getString(R.string.app_name);
 
     AppMediator mediator = (AppMediator) context.get().getApplication();
-    ClickState state = mediator.getClickState();
+    ClickListState state = mediator.getClickListState();
 
-    ClickContract.Router router = new ClickRouter(mediator);
-    ClickContract.Presenter presenter = new ClickPresenter(state);
-    ClickContract.Model model = new ClickModel(data);
+    ClickListContract.Router router = new ClickListRouter(mediator);
+    ClickListContract.Presenter presenter = new ClickListPresenter(state);
+    ClickListContract.Model model = new ClickListModel(data);
     presenter.injectModel(model);
     presenter.injectRouter(router);
     presenter.injectView(new WeakReference<>(view));

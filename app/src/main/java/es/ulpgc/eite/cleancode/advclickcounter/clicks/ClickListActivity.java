@@ -9,12 +9,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import es.ulpgc.eite.cleancode.advclickcounter.R;
 import es.ulpgc.eite.cleancode.advclickcounter.data.ClickData;
 
-public class ClickActivity
-    extends AppCompatActivity implements ClickContract.View {
+public class ClickListActivity
+    extends AppCompatActivity implements ClickListContract.View {
 
-  public static String TAG = ClickActivity.class.getSimpleName();
+  public static String TAG = ClickListActivity.class.getSimpleName();
 
-  private ClickContract.Presenter presenter;
+  private ClickListContract.Presenter presenter;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +23,7 @@ public class ClickActivity
     getSupportActionBar().setTitle(R.string.app_name);
 
     // do the setup
-    ClickScreen.configure(this);
+    ClickListScreen.configure(this);
 
     if (savedInstanceState == null) {
       presenter.onStart();
@@ -63,11 +63,11 @@ public class ClickActivity
   }
 
   @Override
-  public void onDataUpdated(ClickViewModel viewModel) {
+  public void onDataUpdated(ClickListViewModel viewModel) {
     //Log.e(TAG, "onDataUpdated()");
 
     // deal with the datasource
-    ((ListView) findViewById(R.id.clickList)).setAdapter(new ClickAdapter(
+    ((ListView) findViewById(R.id.clickList)).setAdapter(new ClickListAdapter(
             this, viewModel.datasource, new View.OnClickListener() {
 
           @Override
@@ -80,7 +80,7 @@ public class ClickActivity
   }
 
   @Override
-  public void injectPresenter(ClickContract.Presenter presenter) {
+  public void injectPresenter(ClickListContract.Presenter presenter) {
     this.presenter = presenter;
   }
 

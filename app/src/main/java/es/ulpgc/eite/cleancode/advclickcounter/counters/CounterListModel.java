@@ -1,12 +1,12 @@
-package es.ulpgc.eite.cleancode.advclickcounter.clicks;
+package es.ulpgc.eite.cleancode.advclickcounter.counters;
 
-public class ClickModel implements ClickContract.Model {
+public class CounterListModel implements CounterListContract.Model {
 
-  public static String TAG = ClickModel.class.getSimpleName();
+  public static String TAG = CounterListModel.class.getSimpleName();
 
   private String data;
 
-  public ClickModel(String data) {
+  public CounterListModel(String data) {
     this.data = data;
   }
 

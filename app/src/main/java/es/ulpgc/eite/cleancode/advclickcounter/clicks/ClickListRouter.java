@@ -4,13 +4,13 @@ import es.ulpgc.eite.cleancode.advclickcounter.app.AppMediator;
 import es.ulpgc.eite.cleancode.advclickcounter.app.ClickToCounterState;
 import es.ulpgc.eite.cleancode.advclickcounter.app.CounterToClickState;
 
-public class ClickRouter implements ClickContract.Router {
+public class ClickListRouter implements ClickListContract.Router {
 
-  public static String TAG = ClickRouter.class.getSimpleName();
+  public static String TAG = ClickListRouter.class.getSimpleName();
 
   private AppMediator mediator;
 
-  public ClickRouter(AppMediator mediator) {
+  public ClickListRouter(AppMediator mediator) {
     this.mediator = mediator;
   }
 
@@ -28,20 +28,20 @@ public class ClickRouter implements ClickContract.Router {
   @Override
   public void navigateToNextScreen() {
     Context context = mediator.getApplicationContext();
-    Intent intent = new Intent(context, ClickActivity.class);
+    Intent intent = new Intent(context, ClickListActivity.class);
     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
     context.startActivity(intent);
   }
 
 
   @Override
-  public ClickState getStateFromNextScreen() {
+  public ClickListState getStateFromNextScreen() {
     return mediator.getNextClickScreenState();
   }
 
 
   @Override
-  public void passStateToNextScreen(ClickState state) {
+  public void passStateToNextScreen(ClickListState state) {
     mediator.setNextClickScreenState(state);
   }
   */

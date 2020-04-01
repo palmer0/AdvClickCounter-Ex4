@@ -5,7 +5,7 @@ import java.util.List;
 
 import es.ulpgc.eite.cleancode.advclickcounter.data.ClickData;
 
-public class ClickViewModel {
+public class ClickListViewModel {
 
   // put the view state here
   public String data;

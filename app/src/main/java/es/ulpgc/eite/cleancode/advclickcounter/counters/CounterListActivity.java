@@ -9,12 +9,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import es.ulpgc.eite.cleancode.advclickcounter.R;
 import es.ulpgc.eite.cleancode.advclickcounter.data.CounterData;
 
-public class CounterActivity
-    extends AppCompatActivity implements CounterContract.View {
+public class CounterListActivity
+    extends AppCompatActivity implements CounterListContract.View {
 
-  public static String TAG = CounterActivity.class.getSimpleName();
+  public static String TAG = CounterListActivity.class.getSimpleName();
 
-  private CounterContract.Presenter presenter;
+  private CounterListContract.Presenter presenter;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +23,7 @@ public class CounterActivity
     getSupportActionBar().setTitle(R.string.app_name);
 
     // do the setup
-    CounterScreen.configure(this);
+    CounterListScreen.configure(this);
 
     if (savedInstanceState == null) {
       presenter.onStart();
@@ -63,7 +63,7 @@ public class CounterActivity
   }
 
   @Override
-  public void onDataUpdated(CounterViewModel viewModel) {
+  public void onDataUpdated(CounterListViewModel viewModel) {
     //Log.e(TAG, "onDataUpdated()");
 
     // deal with the datasource
@@ -80,7 +80,7 @@ public class CounterActivity
   }
 
   @Override
-  public void injectPresenter(CounterContract.Presenter presenter) {
+  public void injectPresenter(CounterListContract.Presenter presenter) {
     this.presenter = presenter;
   }
 

@@ -7,9 +7,9 @@ import java.lang.ref.WeakReference;
 import es.ulpgc.eite.cleancode.advclickcounter.R;
 import es.ulpgc.eite.cleancode.advclickcounter.app.AppMediator;
 
-public class CounterScreen {
+public class CounterListScreen {
 
-  public static void configure(CounterContract.View view) {
+  public static void configure(CounterListContract.View view) {
 
     WeakReference<FragmentActivity> context =
         new WeakReference<>((FragmentActivity) view);
@@ -17,11 +17,11 @@ public class CounterScreen {
     String data = context.get().getString(R.string.app_name);
 
     AppMediator mediator = (AppMediator) context.get().getApplication();
-    CounterState state = mediator.getCounterState();
+    CounterListState state = mediator.getCounterListState();
 
-    CounterContract.Router router = new CounterRouter(mediator);
-    CounterContract.Presenter presenter = new CounterPresenter(state);
-    CounterContract.Model model = new CounterModel(data);
+    CounterListContract.Router router = new CounterListRouter(mediator);
+    CounterListContract.Presenter presenter = new CounterListPresenter(state);
+    CounterListContract.Model model = new CounterListModel(data);
     presenter.injectModel(model);
     presenter.injectRouter(router);
     presenter.injectView(new WeakReference<>(view));
