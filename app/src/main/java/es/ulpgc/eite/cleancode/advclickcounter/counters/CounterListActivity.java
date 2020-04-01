@@ -67,7 +67,7 @@ public class CounterListActivity
     //Log.e(TAG, "onDataUpdated()");
 
     // deal with the datasource
-    ((ListView) findViewById(R.id.counterList)).setAdapter(new CounterAdapter(
+    ((ListView) findViewById(R.id.counterList)).setAdapter(new CounterListAdapter(
             this, viewModel.datasource, new View.OnClickListener() {
 
           @Override
