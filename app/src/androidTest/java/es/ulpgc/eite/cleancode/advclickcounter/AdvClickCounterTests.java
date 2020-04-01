@@ -54,7 +54,8 @@ public class AdvClickCounterTests {
 
 
     @Test
-    public void test01CrearPrimerContador() {
+    public void test01CrearPrimerContador() { // 1
+
         // Given mostramos lista de contadores con dimension "0"
         robot.mostramosListaDeContadoresConDimensionP1("0");
         // When pulsamos boton de lista de contadores
@@ -66,7 +67,7 @@ public class AdvClickCounterTests {
     }
 
     @Test
-    public void test21CrearPrimerContador() {
+    public void test21CrearPrimerContador() { // 2
 
         // Given mostramos lista de contadores con dimension "0"
         robot.mostramosListaDeContadoresConDimensionP1("0");
@@ -82,7 +83,8 @@ public class AdvClickCounterTests {
     }
 
     @Test
-    public void test02CrearSegundoContador() {
+    public void test02CrearSegundoContador() { // 3
+
         // Given mostramos lista de contadores con dimension "0"
         robot.mostramosListaDeContadoresConDimensionP1("0");
         // When pulsamos boton de lista de contadores
@@ -100,7 +102,8 @@ public class AdvClickCounterTests {
 
 
     @Test
-    public void test22CrearSegundoContador() {
+    public void test22CrearSegundoContador() { // 4
+
         // Given mostramos lista de contadores con dimension "0"
         robot.mostramosListaDeContadoresConDimensionP1("0");
         // And pulsamos boton de lista de contadores
@@ -118,7 +121,8 @@ public class AdvClickCounterTests {
     }
 
     @Test
-    public void test03PulsarEnSegundoContador() {
+    public void test03PulsarEnSegundoContador() { // 5
+
         // Given mostramos lista de contadores con dimension "0"
         robot.mostramosListaDeContadoresConDimensionP1("0");
         // And pulsamos boton de lista de contadores
@@ -132,7 +136,8 @@ public class AdvClickCounterTests {
     }
 
     @Test
-    public void test23PulsarEnSegundoContador() {
+    public void test23PulsarEnSegundoContador() { // 6
+
         // Given mostramos lista de contadores con dimension "0"
         robot.mostramosListaDeContadoresConDimensionP1("0");
         // And pulsamos boton de lista de contadores
@@ -149,7 +154,8 @@ public class AdvClickCounterTests {
 
 
     @Test
-    public void test04CrearPrimerClicEnSegundoContador() {
+    public void test04CrearPrimerClicEnSegundoContador() { // 7
+
         // Given mostramos lista de contadores con dimension "0"
         robot.mostramosListaDeContadoresConDimensionP1("0");
         // And pulsamos boton de lista de contadores
@@ -170,7 +176,8 @@ public class AdvClickCounterTests {
 
 
     @Test
-    public void test24CrearPrimerClicEnSegundoContador() {
+    public void test24CrearPrimerClicEnSegundoContador() { // 8
+
         // Given mostramos lista de contadores con dimension "0"
         robot.mostramosListaDeContadoresConDimensionP1("0");
         // And pulsamos boton de lista de contadores
@@ -190,7 +197,8 @@ public class AdvClickCounterTests {
     }
 
     @Test
-    public void test05CrearSegundoClicEnSegundoContador() {
+    public void test05CrearSegundoClicEnSegundoContador() { // 9
+
         // Given mostramos lista de contadores con dimension "0"
         robot.mostramosListaDeContadoresConDimensionP1("0");
         // And pulsamos boton de lista de contadores
@@ -212,7 +220,8 @@ public class AdvClickCounterTests {
     }
 
     @Test
-    public void test25CrearSegundoClicEnSegundoContador() {
+    public void test25CrearSegundoClicEnSegundoContador() { // 10
+
         // Given mostramos lista de contadores con dimension "0"
         robot.mostramosListaDeContadoresConDimensionP1("0");
         // And pulsamos boton de lista de contadores
@@ -237,7 +246,8 @@ public class AdvClickCounterTests {
 
 
     @Test
-    public void test06PulsarEnPrimerClicEnSegundoContador() {
+    public void test06PulsarEnPrimerClicEnSegundoContador() { // 11
+
         // Given mostramos lista de contadores con dimension "0"
         robot.mostramosListaDeContadoresConDimensionP1("0");
         // And pulsamos boton de lista de contadores
@@ -264,7 +274,8 @@ public class AdvClickCounterTests {
 
 
     @Test
-    public void test26PulsarEnPrimerClicEnSegundoContador() {
+    public void test26PulsarEnPrimerClicEnSegundoContador() { // 12
+
         // Given mostramos lista de contadores con dimension "0"
         robot.mostramosListaDeContadoresConDimensionP1("0");
         // And pulsamos boton de lista de contadores
@@ -291,7 +302,8 @@ public class AdvClickCounterTests {
 
 
     @Test
-    public void test07PulsarNuevamenteEnPrimerClicEnSegundoContador() {
+    public void test07PulsarNuevamenteEnPrimerClicEnSegundoContador() { // 13
+
         // Given mostramos lista de contadores con dimension "0"
         robot.mostramosListaDeContadoresConDimensionP1("0");
         // And pulsamos boton de lista de contadores
@@ -319,7 +331,8 @@ public class AdvClickCounterTests {
 
 
     @Test
-    public void test27PulsarNuevamenteEnPrimerClicEnSegundoContador() {
+    public void test27PulsarNuevamenteEnPrimerClicEnSegundoContador() { // 14
+
         // Given mostramos lista de contadores con dimension "0"
         robot.mostramosListaDeContadoresConDimensionP1("0");
         // And pulsamos boton de lista de contadores
@@ -348,7 +361,8 @@ public class AdvClickCounterTests {
 
 
     @Test
-    public void test08PulsarEnSegundoClicEnSegundoContador() {
+    public void test08PulsarEnSegundoClicEnSegundoContador() { // 15
+
         // Given mostramos lista de contadores con dimension "0"
         robot.mostramosListaDeContadoresConDimensionP1("0");
         // And pulsamos boton de lista de contadores
@@ -379,7 +393,8 @@ public class AdvClickCounterTests {
 
 
     @Test
-    public void test28PulsarEnSegundoClicEnSegundoContador() {
+    public void test28PulsarEnSegundoClicEnSegundoContador() { // 16
+
         // Given mostramos lista de contadores con dimension "0"
         robot.mostramosListaDeContadoresConDimensionP1("0");
         // And pulsamos boton de lista de contadores
@@ -411,7 +426,8 @@ public class AdvClickCounterTests {
 
 
     @Test
-    public void test09PulsarBackEnSegundoClicEnSegundoContador() {
+    public void test09PulsarBackEnSegundoClicEnSegundoContador() { // 17
+
         // Given mostramos lista de contadores con dimension "0"
         robot.mostramosListaDeContadoresConDimensionP1("0");
         // And pulsamos boton de lista de contadores
@@ -444,7 +460,8 @@ public class AdvClickCounterTests {
 
 
     @Test
-    public void test29PulsarBackEnSegundoClicEnSegundoContador() {
+    public void test29PulsarBackEnSegundoClicEnSegundoContador() { // 18
+
         // Given mostramos lista de contadores con dimension "0"
         robot.mostramosListaDeContadoresConDimensionP1("0");
         // And pulsamos boton de lista de contadores
@@ -477,7 +494,8 @@ public class AdvClickCounterTests {
 
 
     @Test
-    public void test10CrearTercerContador() {
+    public void test10CrearTercerContador() { // 19
+
         // Given mostramos lista de contadores con dimension "0"
         robot.mostramosListaDeContadoresConDimensionP1("0");
         // And pulsamos boton de lista de contadores
@@ -511,11 +529,9 @@ public class AdvClickCounterTests {
     }
 
 
-
-
-
     @Test
-    public void test30CrearTercerContador() {
+    public void test30CrearTercerContador() { // 20
+
         // Given mostramos lista de contadores con dimension "0"
         robot.mostramosListaDeContadoresConDimensionP1("0");
         // And pulsamos boton de lista de contadores
@@ -552,7 +568,8 @@ public class AdvClickCounterTests {
 
 
     @Test
-    public void test11PulsarEnTercerContador() {
+    public void test11PulsarEnTercerContador() { // 21
+
         // Given mostramos lista de contadores con dimension "0"
         robot.mostramosListaDeContadoresConDimensionP1("0");
         // And pulsamos boton de lista de contadores
@@ -583,7 +600,8 @@ public class AdvClickCounterTests {
 
 
     @Test
-    public void test31PulsarEnTercerContador() {
+    public void test31PulsarEnTercerContador() { // 22
+
         // Given mostramos lista de contadores con dimension "0"
         robot.mostramosListaDeContadoresConDimensionP1("0");
         // And pulsamos boton de lista de contadores
@@ -616,7 +634,8 @@ public class AdvClickCounterTests {
 
 
     @Test
-    public void test12CrearPrimerClicEnTercerContador() {
+    public void test12CrearPrimerClicEnTercerContador() { // 23
+
         // Given mostramos lista de contadores con dimension "0"
         robot.mostramosListaDeContadoresConDimensionP1("0");
         // And pulsamos boton de lista de contadores
@@ -651,7 +670,8 @@ public class AdvClickCounterTests {
 
 
     @Test
-    public void test32CrearPrimerClicEnTercerContador() {
+    public void test32CrearPrimerClicEnTercerContador() { // 24
+
         // Given mostramos lista de contadores con dimension "0"
         robot.mostramosListaDeContadoresConDimensionP1("0");
         // And pulsamos boton de lista de contadores
@@ -687,7 +707,8 @@ public class AdvClickCounterTests {
     }
 
     @Test
-    public void test13PulsarEnPrimerClicEnTercerContador() {
+    public void test13PulsarEnPrimerClicEnTercerContador() { // 25
+
         // Given mostramos lista de contadores con dimension "0"
         robot.mostramosListaDeContadoresConDimensionP1("0");
         // And pulsamos boton de lista de contadores
@@ -725,7 +746,8 @@ public class AdvClickCounterTests {
 
 
     @Test
-    public void test33PulsarEnPrimerClicEnTercerContador() {
+    public void test33PulsarEnPrimerClicEnTercerContador() { // 26
+
         // Given mostramos lista de contadores con dimension "0"
         robot.mostramosListaDeContadoresConDimensionP1("0");
         // And pulsamos boton de lista de contadores
@@ -763,7 +785,8 @@ public class AdvClickCounterTests {
     }
 
     @Test
-    public void test14PulsarNuevamenteEnPrimerClicEnTercerContador() {
+    public void test14PulsarNuevamenteEnPrimerClicEnTercerContador() { // 27
+
         // Given mostramos lista de contadores con dimension "0"
         robot.mostramosListaDeContadoresConDimensionP1("0");
         // And pulsamos boton de lista de contadores
@@ -802,7 +825,8 @@ public class AdvClickCounterTests {
 
 
     @Test
-    public void test34PulsarNuevamenteEnPrimerClicEnTercerContador() {
+    public void test34PulsarNuevamenteEnPrimerClicEnTercerContador() { // 28
+
         // Given mostramos lista de contadores con dimension "0"
         robot.mostramosListaDeContadoresConDimensionP1("0");
         // And pulsamos boton de lista de contadores
@@ -843,7 +867,8 @@ public class AdvClickCounterTests {
 
 
     @Test
-    public void test15PulsarBackEnPrimerClicEnTercerContador() {
+    public void test15PulsarBackEnPrimerClicEnTercerContador() { // 29
+
         // Given mostramos lista de contadores con dimension "0"
         robot.mostramosListaDeContadoresConDimensionP1("0");
         // And pulsamos boton de lista de contadores
@@ -889,7 +914,8 @@ public class AdvClickCounterTests {
 
 
     @Test
-    public void test35PulsarBackEnPrimerClicEnTercerContador() {
+    public void test35PulsarBackEnPrimerClicEnTercerContador() { // 30
+
         // Given mostramos lista de contadores con dimension "0"
         robot.mostramosListaDeContadoresConDimensionP1("0");
         // And pulsamos boton de lista de contadores
@@ -936,7 +962,8 @@ public class AdvClickCounterTests {
 
 
     @Test
-    public void test16PulsarEnPrimerContador() {
+    public void test16PulsarEnPrimerContador() { // 31
+
         // Given mostramos lista de contadores con dimension "0"
         robot.mostramosListaDeContadoresConDimensionP1("0");
         // And pulsamos boton de lista de contadores
@@ -977,7 +1004,8 @@ public class AdvClickCounterTests {
 
 
     @Test
-    public void test36PulsarEnPrimerContador() {
+    public void test36PulsarEnPrimerContador() { // 32
+
         // Given mostramos lista de contadores con dimension "0"
         robot.mostramosListaDeContadoresConDimensionP1("0");
         // And pulsamos boton de lista de contadores
@@ -1020,7 +1048,8 @@ public class AdvClickCounterTests {
 
 
     @Test
-    public void test17CrearPrimerClicEnPrimerContador() {
+    public void test17CrearPrimerClicEnPrimerContador() { // 33
+
         // Given mostramos lista de contadores con dimension "0"
         robot.mostramosListaDeContadoresConDimensionP1("0");
         // And pulsamos boton de lista de contadores
@@ -1067,7 +1096,8 @@ public class AdvClickCounterTests {
 
 
     @Test
-    public void test37CrearPrimerClicEnPrimerContador() {
+    public void test37CrearPrimerClicEnPrimerContador() { // 34
+
         // Given mostramos lista de contadores con dimension "0"
         robot.mostramosListaDeContadoresConDimensionP1("0");
         // And pulsamos boton de lista de contadores
@@ -1114,7 +1144,8 @@ public class AdvClickCounterTests {
 
 
     @Test
-    public void test18PulsarBackEnPrimerClicEnPrimerContador() {
+    public void test18PulsarBackEnPrimerClicEnPrimerContador() { // 35
+
         // Given mostramos lista de contadores con dimension "0"
         robot.mostramosListaDeContadoresConDimensionP1("0");
         // And pulsamos boton de lista de contadores
@@ -1166,7 +1197,8 @@ public class AdvClickCounterTests {
 
 
     @Test
-    public void test38PulsarBackEnPrimerClicEnPrimerContador() {
+    public void test38PulsarBackEnPrimerClicEnPrimerContador() { // 36
+
         // Given mostramos lista de contadores con dimension "0"
         robot.mostramosListaDeContadoresConDimensionP1("0");
         // And pulsamos boton de lista de contadores
