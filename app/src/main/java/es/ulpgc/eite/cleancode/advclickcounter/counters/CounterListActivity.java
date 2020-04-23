@@ -89,7 +89,6 @@ public class CounterListActivity
   @Override
   public void navigateToNextScreen() {
     Intent intent = new Intent(this, CounterListActivity.class);
-    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
     startActivity(intent);
   }
 
