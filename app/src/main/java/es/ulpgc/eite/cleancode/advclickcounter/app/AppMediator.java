@@ -1,21 +1,32 @@
 package es.ulpgc.eite.cleancode.advclickcounter.app;
 
-import android.app.Application;
-
 import es.ulpgc.eite.cleancode.advclickcounter.clicks.ClickListState;
 import es.ulpgc.eite.cleancode.advclickcounter.counters.CounterListState;
 
-public class AppMediator extends Application {
+public class AppMediator  {
+
+  private static AppMediator instance;
 
   private CounterListState counterListState;
   private ClickListState clickListState;
 
-  @Override
-  public void onCreate() {
-    super.onCreate();
 
-    counterListState =new CounterListState();
+  private AppMediator() {
+    counterListState = new CounterListState();
     clickListState = new ClickListState();
+
+  }
+
+  public static AppMediator getInstance() {
+    if(instance == null){
+      instance = new AppMediator();
+    }
+
+    return instance;
+  }
+
+  public static void resetInstance() {
+    instance=null;
   }
 
   public CounterListState getCounterListState() {

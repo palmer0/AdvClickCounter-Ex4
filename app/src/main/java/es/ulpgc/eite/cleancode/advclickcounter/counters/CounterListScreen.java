@@ -16,7 +16,7 @@ public class CounterListScreen {
 
     String data = context.get().getString(R.string.app_name);
 
-    AppMediator mediator = (AppMediator) context.get().getApplication();
+    AppMediator mediator = AppMediator.getInstance();
     CounterListState state = mediator.getCounterListState();
 
     CounterListContract.Router router = new CounterListRouter(mediator);

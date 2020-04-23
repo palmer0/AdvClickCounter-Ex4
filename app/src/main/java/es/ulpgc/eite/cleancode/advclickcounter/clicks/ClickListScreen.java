@@ -16,7 +16,7 @@ public class ClickListScreen {
 
     String data = context.get().getString(R.string.app_name);
 
-    AppMediator mediator = (AppMediator) context.get().getApplication();
+    AppMediator mediator = AppMediator.getInstance();
     ClickListState state = mediator.getClickListState();
 
     ClickListContract.Router router = new ClickListRouter(mediator);
