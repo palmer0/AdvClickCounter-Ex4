@@ -17,14 +17,10 @@ public class ClickListScreen {
     String data = context.get().getString(R.string.app_name);
 
     AppMediator mediator = AppMediator.getInstance();
-    //ClickListState state = mediator.getClickListState();
 
-    //ClickListContract.Router router = new ClickListRouter(mediator);
-    //ClickListContract.Presenter presenter = new ClickListPresenter(state);
     ClickListContract.Presenter presenter = new ClickListPresenter(mediator);
     ClickListContract.Model model = new ClickListModel(data);
     presenter.injectModel(model);
-    //presenter.injectRouter(router);
     presenter.injectView(new WeakReference<>(view));
 
     view.injectPresenter(presenter);

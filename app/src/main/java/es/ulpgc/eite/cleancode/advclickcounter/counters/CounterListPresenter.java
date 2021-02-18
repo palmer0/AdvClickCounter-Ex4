@@ -2,7 +2,9 @@ package es.ulpgc.eite.cleancode.advclickcounter.counters;
 
 import java.lang.ref.WeakReference;
 
+import es.ulpgc.eite.cleancode.advclickcounter.app.AppMediator;
 import es.ulpgc.eite.cleancode.advclickcounter.app.ClickToCounterState;
+import es.ulpgc.eite.cleancode.advclickcounter.app.CounterToClickState;
 
 public class CounterListPresenter implements CounterListContract.Presenter {
 
@@ -11,11 +13,13 @@ public class CounterListPresenter implements CounterListContract.Presenter {
   private WeakReference<CounterListContract.View> view;
   private CounterListState state;
   private CounterListContract.Model model;
-  private CounterListContract.Router router;
+  private AppMediator mediator;
 
-  public CounterListPresenter(CounterListState state) {
-    this.state = state;
+  public CounterListPresenter(AppMediator mediator) {
+    this.mediator = mediator;
+    state = mediator.getCounterListState();
   }
+
 
   @Override
   public void onStart() {
@@ -50,7 +54,7 @@ public class CounterListPresenter implements CounterListContract.Presenter {
     // Log.e(TAG, "onResume()");
 
     // use passed state if is necessary
-    ClickToCounterState savedState = router.getStateFromNextScreen();
+    ClickToCounterState savedState = getStateFromNextScreen();
     if (savedState != null) {
 
       // update the model if is necessary
@@ -85,6 +89,24 @@ public class CounterListPresenter implements CounterListContract.Presenter {
 
   }
 
+  private void passStateToNextScreen(CounterToClickState state) {
+    mediator.setNextCounterScreenState(state);
+  }
+
+  private ClickToCounterState getStateFromNextScreen() {
+    return mediator.getNextCounterScreenState();
+  }
+
+  /*
+  private void passStateToPreviousScreen(CounterListState state) {
+    mediator.setPreviousCounterScreenState(state);
+  }
+
+  private CounterListState getStateFromPreviousScreen() {
+    return mediator.getPreviousCounterScreenState();
+  }
+  */
+
   @Override
   public void injectView(WeakReference<CounterListContract.View> view) {
     this.view = view;
@@ -95,8 +117,4 @@ public class CounterListPresenter implements CounterListContract.Presenter {
     this.model = model;
   }
 
-  @Override
-  public void injectRouter(CounterListContract.Router router) {
-    this.router = router;
-  }
 }

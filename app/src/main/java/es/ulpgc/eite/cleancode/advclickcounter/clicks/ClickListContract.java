@@ -13,7 +13,6 @@ public interface ClickListContract {
   interface Presenter {
     void injectView(WeakReference<View> view);
     void injectModel(Model model);
-    //void injectRouter(Router router);
 
     void onResume();
     void onStart();
@@ -32,11 +31,4 @@ public interface ClickListContract {
     void onDataFromPreviousScreen(String data);
   }
 
-//  interface Router {
-//    //void navigateToNextScreen();
-//    //void passStateToNextScreen(ClickListState state);
-//    CounterToClickState getStateFromPreviousScreen();
-//    //ClickListState getStateFromNextScreen();
-//    void passStateToPreviousScreen(ClickToCounterState state);
-//  }
 }
