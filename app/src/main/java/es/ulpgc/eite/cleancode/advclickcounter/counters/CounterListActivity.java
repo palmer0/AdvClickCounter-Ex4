@@ -24,6 +24,7 @@ public class CounterListActivity
     setContentView(R.layout.activity_counter);
     getSupportActionBar().setTitle(R.string.app_name);
 
+    // don't touch, necessary for tests
     if (savedInstanceState == null) {
       AppMediator.resetInstance();
     }
