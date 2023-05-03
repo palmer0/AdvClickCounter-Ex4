@@ -1,5 +1,7 @@
 package es.ulpgc.eite.cleancode.advclickcounter.counters;
 
+import android.util.Log;
+
 import java.lang.ref.WeakReference;
 
 import es.ulpgc.eite.cleancode.advclickcounter.app.AppMediator;
@@ -8,7 +10,7 @@ import es.ulpgc.eite.cleancode.advclickcounter.app.CounterToClickState;
 
 public class CounterListPresenter implements CounterListContract.Presenter {
 
-  public static String TAG = CounterListPresenter.class.getSimpleName();
+  public static String TAG = "AdvClickCounter.CounterListPresenter";
 
   private WeakReference<CounterListContract.View> view;
   private CounterListState state;
@@ -17,76 +19,61 @@ public class CounterListPresenter implements CounterListContract.Presenter {
 
   public CounterListPresenter(AppMediator mediator) {
     this.mediator = mediator;
-    state = mediator.getCounterListState();
+
   }
 
 
   @Override
   public void onStart() {
-    // Log.e(TAG, "onStart()");
+    Log.e(TAG, "onStart()");
 
-    // initialize the state if is necessary
-    if (state == null) {
-      state = new CounterListState();
-    }
+    // initialize the state
+    state = new CounterListState();
 
-    /*
-    // use passed state if is necessary
-    CounterListState savedState = router.getStateFromPreviousScreen();
-    if (savedState != null) {
-
-      // update the model if is necessary
-      model.onDataFromPreviousScreen(savedState.data);
-    }
-    */
+    // TODO: add code if is necessary
   }
 
   @Override
   public void onRestart() {
-    // Log.e(TAG, "onRestart()");
+    Log.e(TAG, "onRestart()");
 
-    // update the model if is necessary
-    model.onRestartScreen(state.data);
+    // TODO: add code if is necessary
   }
 
   @Override
   public void onResume() {
-    // Log.e(TAG, "onResume()");
+    Log.e(TAG, "onResume()");
 
-    // use passed state if is necessary
-    ClickToCounterState savedState = getStateFromNextScreen();
-    if (savedState != null) {
-
-      // update the model if is necessary
-      model.onDataFromNextScreen(savedState.data);
-    }
-
-    // call the model and update the state
-    state.data = model.getStoredData();
-
-    // update the view
-    view.get().onDataUpdated(state);
+    // TODO: add code if is necessary
 
   }
 
   @Override
   public void onBackPressed() {
-    // Log.e(TAG, "onBackPressed()");
+    Log.e(TAG, "onBackPressed()");
+
+    // TODO: add code if is necessary
   }
 
   @Override
   public void onPause() {
-    // Log.e(TAG, "onPause()");
+    Log.e(TAG, "onPause()");
+
+    // TODO: add code if is necessary
   }
 
   @Override
   public void onDestroy() {
-    // Log.e(TAG, "onDestroy()");
+    Log.e(TAG, "onDestroy()");
+
+    // TODO: add code if is necessary
   }
 
   @Override
   public void onCounterButtonPressed() {
+    Log.e(TAG, "onCounterButtonPressed()");
 
+    // TODO: add code if is necessary
   }
 
   private void passStateToNextScreen(CounterToClickState state) {
@@ -97,15 +84,6 @@ public class CounterListPresenter implements CounterListContract.Presenter {
     return mediator.getNextCounterScreenState();
   }
 
-  /*
-  private void passStateToPreviousScreen(CounterListState state) {
-    mediator.setPreviousCounterScreenState(state);
-  }
-
-  private CounterListState getStateFromPreviousScreen() {
-    return mediator.getPreviousCounterScreenState();
-  }
-  */
 
   @Override
   public void injectView(WeakReference<CounterListContract.View> view) {

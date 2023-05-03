@@ -1,21 +1,24 @@
 package es.ulpgc.eite.cleancode.advclickcounter;
 
 
+import static androidx.test.platform.app.InstrumentationRegistry.getInstrumentation;
+
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.filters.LargeTest;
 import androidx.test.rule.ActivityTestRule;
 import androidx.test.uiautomator.UiDevice;
 
+import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.junit.runners.MethodSorters;
 
 import es.ulpgc.eite.cleancode.advclickcounter.counters.CounterListActivity;
 
-import static androidx.test.platform.app.InstrumentationRegistry.getInstrumentation;
-
 @RunWith(AndroidJUnit4.class)
 @LargeTest
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class AdvClickCounterTests { // 18 tests
 
 
@@ -46,23 +49,8 @@ public class AdvClickCounterTests { // 18 tests
     }
 
 
-    @Test
-    public void test23PulsarEnSegundoContador() { // 1
 
-        // Given mostramos lista de contadores con dimension "0"
-        robot.mostramosListaDeContadoresConDimensionP1("0");
-        // And pulsamos boton de lista de contadores
-        robot.pulsamosBotonDeListaDeContadores();
-        // And pulsamos boton de lista de contadores
-        robot.pulsamosBotonDeListaDeContadores();
-        // And pulsamos boton de contador en posicion "1"
-        robot.pulsamosBotonDeContadorEnPosicionP1("1");
-        // When rotamos pantalla
-        rotateScreen();
-        // Then mostramos lista de clics con dimension "0"
-        robot.mostramosListaDeClicsConDimensionP1("0");
-    }
-
+    ////////// PORTRAIT TESTS //////////
 
 
     @Test
@@ -94,34 +82,6 @@ public class AdvClickCounterTests { // 18 tests
 
 
     @Test
-    public void test26PulsarEnPrimerClicEnSegundoContador() { // 3
-
-        // Given mostramos lista de contadores con dimension "0"
-        robot.mostramosListaDeContadoresConDimensionP1("0");
-        // And pulsamos boton de lista de contadores
-        robot.pulsamosBotonDeListaDeContadores();
-        // And pulsamos boton de lista de contadores
-        robot.pulsamosBotonDeListaDeContadores();
-        // And pulsamos boton de contador en posicion "1"
-        robot.pulsamosBotonDeContadorEnPosicionP1("1");
-        // And pulsamos boton de lista de clics
-        robot.pulsamosBotonDeListaDeClics();
-        // And pulsamos boton de lista de clics
-        robot.pulsamosBotonDeListaDeClics();
-        // And pulsamos boton de clics en posicion "0"
-        robot.pulsamosBotonDeClicsEnPosicionP1("0");
-        // When rotamos pantalla
-        rotateScreen();
-        // Then mostramos clic en lista en posicion "0" con valor "1"
-        robot.mostramosClicEnListaEnPosicionP1ConValorP2("0", "1");
-        // And mostramos clic en lista en posicion "1" con valor "0"
-        robot.mostramosClicEnListaEnPosicionP1ConValorP2("1", "0");
-        // And mostramos lista de clics con dimension "2"
-        robot.mostramosListaDeClicsConDimensionP1("2");
-    }
-
-
-    @Test
     public void test08PulsarEnSegundoClicEnSegundoContador() { // 4
 
         // Given mostramos lista de contadores con dimension "0"
@@ -146,6 +106,345 @@ public class AdvClickCounterTests { // 18 tests
         robot.mostramosClicEnListaEnPosicionP1ConValorP2("0", "2");
         // And mostramos clic en lista en posicion "1" con valor "1"
         robot.mostramosClicEnListaEnPosicionP1ConValorP2("1", "1");
+        // And mostramos lista de clics con dimension "2"
+        robot.mostramosListaDeClicsConDimensionP1("2");
+    }
+
+
+
+
+    @Test
+    public void test09PulsarBackEnSegundoClicEnSegundoContador() { // 6
+
+        // Given mostramos lista de contadores con dimension "0"
+        robot.mostramosListaDeContadoresConDimensionP1("0");
+        // And pulsamos boton de lista de contadores
+        robot.pulsamosBotonDeListaDeContadores();
+        // And pulsamos boton de lista de contadores
+        robot.pulsamosBotonDeListaDeContadores();
+        // And pulsamos boton de contador en posicion "1"
+        robot.pulsamosBotonDeContadorEnPosicionP1("1");
+        // And pulsamos boton de lista de clics
+        robot.pulsamosBotonDeListaDeClics();
+        // And pulsamos boton de lista de clics
+        robot.pulsamosBotonDeListaDeClics();
+        // And pulsamos boton de clics en posicion "0"
+        robot.pulsamosBotonDeClicsEnPosicionP1("0");
+        // And pulsamos boton de clics en posicion "0"
+        robot.pulsamosBotonDeClicsEnPosicionP1("0");
+        // And pulsamos boton de clics en posicion "1"
+        robot.pulsamosBotonDeClicsEnPosicionP1("1");
+        // When pulsamos back en lista de clics
+        robot.pulsamosBackEnListaDeClics();
+        // Then mostramos contador en lista en posicion "0" con valor "0"
+        robot.mostramosContadorEnListaEnPosicionP1ConValorP2("0", "0");
+        // And mostramos contador en lista en posicion "1" con valor "3"
+        robot.mostramosContadorEnListaEnPosicionP1ConValorP2("1", "3"); 
+        // And mostramos lista de contadores con dimension "2"
+        robot.mostramosListaDeContadoresConDimensionP1("2");
+    }
+
+
+
+    @Test
+    public void test11PulsarEnTercerContador() { // 8
+
+        // Given mostramos lista de contadores con dimension "0"
+        robot.mostramosListaDeContadoresConDimensionP1("0");
+        // And pulsamos boton de lista de contadores
+        robot.pulsamosBotonDeListaDeContadores();
+        // And pulsamos boton de lista de contadores
+        robot.pulsamosBotonDeListaDeContadores();
+        // And pulsamos boton de contador en posicion "1"
+        robot.pulsamosBotonDeContadorEnPosicionP1("1");
+        // And pulsamos boton de lista de clics
+        robot.pulsamosBotonDeListaDeClics();
+        // And pulsamos boton de lista de clics
+        robot.pulsamosBotonDeListaDeClics();
+        // And pulsamos boton de clics en posicion "0"
+        robot.pulsamosBotonDeClicsEnPosicionP1("0");
+        // And pulsamos boton de clics en posicion "0"
+        robot.pulsamosBotonDeClicsEnPosicionP1("0");
+        // And pulsamos boton de clics en posicion "1"
+        robot.pulsamosBotonDeClicsEnPosicionP1("1");
+        // And pulsamos back en lista de clics
+        robot.pulsamosBackEnListaDeClics();
+        // And pulsamos boton de lista de contadores
+        robot.pulsamosBotonDeListaDeContadores();
+        // When pulsamos boton de contador en posicion "2"
+        robot.pulsamosBotonDeContadorEnPosicionP1("2");
+        // Then mostramos lista de clics con dimension "0"
+        robot.mostramosListaDeClicsConDimensionP1("0");
+    }
+
+
+
+
+    @Test
+    public void test12CrearPrimerClicEnTercerContador() { // 10
+
+        // Given mostramos lista de contadores con dimension "0"
+        robot.mostramosListaDeContadoresConDimensionP1("0");
+        // And pulsamos boton de lista de contadores
+        robot.pulsamosBotonDeListaDeContadores();
+        // And pulsamos boton de lista de contadores
+        robot.pulsamosBotonDeListaDeContadores();
+        // And pulsamos boton de contador en posicion "1"
+        robot.pulsamosBotonDeContadorEnPosicionP1("1");
+        // And pulsamos boton de lista de clics
+        robot.pulsamosBotonDeListaDeClics();
+        // And pulsamos boton de lista de clics
+        robot.pulsamosBotonDeListaDeClics();
+        // And pulsamos boton de clics en posicion "0"
+        robot.pulsamosBotonDeClicsEnPosicionP1("0");
+        // And pulsamos boton de clics en posicion "0"
+        robot.pulsamosBotonDeClicsEnPosicionP1("0");
+        // And pulsamos boton de clics en posicion "1"
+        robot.pulsamosBotonDeClicsEnPosicionP1("1");
+        // And pulsamos back en lista de clics
+        robot.pulsamosBackEnListaDeClics();
+        // And pulsamos boton de lista de contadores
+        robot.pulsamosBotonDeListaDeContadores();
+        // And pulsamos boton de contador en posicion "2"
+        robot.pulsamosBotonDeContadorEnPosicionP1("2");
+        // When pulsamos boton de lista de clics
+        robot.pulsamosBotonDeListaDeClics();
+        // Then mostramos clic en lista en posicion "0" con valor "0"
+        robot.mostramosClicEnListaEnPosicionP1ConValorP2("0", "0");
+        // And mostramos lista de clics con dimension "1"
+        robot.mostramosListaDeClicsConDimensionP1("1");
+    }
+
+
+
+    @Test
+    public void test13PulsarEnPrimerClicEnTercerContador() { // 12
+
+        // Given mostramos lista de contadores con dimension "0"
+        robot.mostramosListaDeContadoresConDimensionP1("0");
+        // And pulsamos boton de lista de contadores
+        robot.pulsamosBotonDeListaDeContadores();
+        // And pulsamos boton de lista de contadores
+        robot.pulsamosBotonDeListaDeContadores();
+        // And pulsamos boton de contador en posicion "1"
+        robot.pulsamosBotonDeContadorEnPosicionP1("1");
+        // And pulsamos boton de lista de clics
+        robot.pulsamosBotonDeListaDeClics();
+        // And pulsamos boton de lista de clics
+        robot.pulsamosBotonDeListaDeClics();
+        // And pulsamos boton de clics en posicion "0"
+        robot.pulsamosBotonDeClicsEnPosicionP1("0");
+        // And pulsamos boton de clics en posicion "0"
+        robot.pulsamosBotonDeClicsEnPosicionP1("0");
+        // And pulsamos boton de clics en posicion "1"
+        robot.pulsamosBotonDeClicsEnPosicionP1("1");
+        // And pulsamos back en lista de clics
+        robot.pulsamosBackEnListaDeClics();
+        // And pulsamos boton de lista de contadores
+        robot.pulsamosBotonDeListaDeContadores();
+        // And pulsamos boton de contador en posicion "2"
+        robot.pulsamosBotonDeContadorEnPosicionP1("2");
+        // And pulsamos boton de lista de clics
+        robot.pulsamosBotonDeListaDeClics();
+        // When pulsamos boton de clics en posicion "0"
+        robot.pulsamosBotonDeClicsEnPosicionP1("0");
+        // Then mostramos clic en lista en posicion "0" con valor "1"
+        robot.mostramosClicEnListaEnPosicionP1ConValorP2("0", "1");
+        // And mostramos lista de clics con dimension "1"
+        robot.mostramosListaDeClicsConDimensionP1("1");
+    }
+
+
+
+    @Test
+    public void test15PulsarBackEnPrimerClicEnTercerContador() { // 14
+
+        // Given mostramos lista de contadores con dimension "0"
+        robot.mostramosListaDeContadoresConDimensionP1("0");
+        // And pulsamos boton de lista de contadores
+        robot.pulsamosBotonDeListaDeContadores();
+        // And pulsamos boton de lista de contadores
+        robot.pulsamosBotonDeListaDeContadores();
+        // And pulsamos boton de contador en posicion "1"
+        robot.pulsamosBotonDeContadorEnPosicionP1("1");
+        // And pulsamos boton de lista de clics
+        robot.pulsamosBotonDeListaDeClics();
+        // And pulsamos boton de lista de clics
+        robot.pulsamosBotonDeListaDeClics();
+        // And pulsamos boton de clics en posicion "0"
+        robot.pulsamosBotonDeClicsEnPosicionP1("0");
+        // And pulsamos boton de clics en posicion "0"
+        robot.pulsamosBotonDeClicsEnPosicionP1("0");
+        // And pulsamos boton de clics en posicion "1"
+        robot.pulsamosBotonDeClicsEnPosicionP1("1");
+        // And pulsamos back en lista de clics
+        robot.pulsamosBackEnListaDeClics();
+        // And pulsamos boton de lista de contadores
+        robot.pulsamosBotonDeListaDeContadores();
+        // And pulsamos boton de contador en posicion "2"
+        robot.pulsamosBotonDeContadorEnPosicionP1("2");
+        // And pulsamos boton de lista de clics
+        robot.pulsamosBotonDeListaDeClics();
+        // And pulsamos boton de clics en posicion "0"
+        robot.pulsamosBotonDeClicsEnPosicionP1("0");
+        // And pulsamos boton de clics en posicion "0"
+        robot.pulsamosBotonDeClicsEnPosicionP1("0");
+        // When pulsamos back en lista de clics
+        robot.pulsamosBackEnListaDeClics();
+        // Then mostramos contador en lista en posicion "0" con valor "0"
+        robot.mostramosContadorEnListaEnPosicionP1ConValorP2("0", "0");
+        // And mostramos contador en lista en posicion "1" con valor "3"
+        robot.mostramosContadorEnListaEnPosicionP1ConValorP2("1", "3");
+        // And mostramos contador en lista en posicion "2" con valor "2"
+        robot.mostramosContadorEnListaEnPosicionP1ConValorP2("2", "2");
+        // And mostramos lista de contadores con dimension "3"
+        robot.mostramosListaDeContadoresConDimensionP1("3");
+    }
+
+
+
+
+
+    @Test
+    public void test16PulsarEnPrimerContador() { // 16
+
+        // Given mostramos lista de contadores con dimension "0"
+        robot.mostramosListaDeContadoresConDimensionP1("0");
+        // And pulsamos boton de lista de contadores
+        robot.pulsamosBotonDeListaDeContadores();
+        // And pulsamos boton de lista de contadores
+        robot.pulsamosBotonDeListaDeContadores();
+        // And pulsamos boton de contador en posicion "1"
+        robot.pulsamosBotonDeContadorEnPosicionP1("1");
+        // And pulsamos boton de lista de clics
+        robot.pulsamosBotonDeListaDeClics();
+        // And pulsamos boton de lista de clics
+        robot.pulsamosBotonDeListaDeClics();
+        // And pulsamos boton de clics en posicion "0"
+        robot.pulsamosBotonDeClicsEnPosicionP1("0");
+        // And pulsamos boton de clics en posicion "0"
+        robot.pulsamosBotonDeClicsEnPosicionP1("0");
+        // And pulsamos boton de clics en posicion "1"
+        robot.pulsamosBotonDeClicsEnPosicionP1("1");
+        // And pulsamos back en lista de clics
+        robot.pulsamosBackEnListaDeClics();
+        // And pulsamos boton de lista de contadores
+        robot.pulsamosBotonDeListaDeContadores();
+        // And pulsamos boton de contador en posicion "2"
+        robot.pulsamosBotonDeContadorEnPosicionP1("2");
+        // And pulsamos boton de lista de clics
+        robot.pulsamosBotonDeListaDeClics();
+        // And pulsamos boton de clics en posicion "0"
+        robot.pulsamosBotonDeClicsEnPosicionP1("0");
+        // And pulsamos boton de clics en posicion "0"
+        robot.pulsamosBotonDeClicsEnPosicionP1("0");
+        // And pulsamos back en lista de clics
+        robot.pulsamosBackEnListaDeClics();
+        // When pulsamos boton de contador en posicion "0"
+        robot.pulsamosBotonDeContadorEnPosicionP1("0");
+        // Then mostramos lista de clics con dimension "0"
+        robot.mostramosListaDeClicsConDimensionP1("0");
+    }
+
+
+    @Test
+    public void test18PulsarBackEnPrimerClicEnPrimerContador() { // 18
+
+        // Given mostramos lista de contadores con dimension "0"
+        robot.mostramosListaDeContadoresConDimensionP1("0");
+        // And pulsamos boton de lista de contadores
+        robot.pulsamosBotonDeListaDeContadores();
+        // And pulsamos boton de lista de contadores
+        robot.pulsamosBotonDeListaDeContadores();
+        // And pulsamos boton de contador en posicion "1"
+        robot.pulsamosBotonDeContadorEnPosicionP1("1");
+        // And pulsamos boton de lista de clics
+        robot.pulsamosBotonDeListaDeClics();
+        // And pulsamos boton de lista de clics
+        robot.pulsamosBotonDeListaDeClics();
+        // And pulsamos boton de clics en posicion "0"
+        robot.pulsamosBotonDeClicsEnPosicionP1("0");
+        // And pulsamos boton de clics en posicion "0"
+        robot.pulsamosBotonDeClicsEnPosicionP1("0");
+        // And pulsamos boton de clics en posicion "1"
+        robot.pulsamosBotonDeClicsEnPosicionP1("1");
+        // And pulsamos back en lista de clics
+        robot.pulsamosBackEnListaDeClics();
+        // And pulsamos boton de lista de contadores
+        robot.pulsamosBotonDeListaDeContadores();
+        // And pulsamos boton de contador en posicion "2"
+        robot.pulsamosBotonDeContadorEnPosicionP1("2");
+        // And pulsamos boton de lista de clics
+        robot.pulsamosBotonDeListaDeClics();
+        // And pulsamos boton de clics en posicion "0"
+        robot.pulsamosBotonDeClicsEnPosicionP1("0");
+        // And pulsamos boton de clics en posicion "0"
+        robot.pulsamosBotonDeClicsEnPosicionP1("0");
+        // And pulsamos back en lista de clics
+        robot.pulsamosBackEnListaDeClics();
+        // And pulsamos boton de contador en posicion "0"
+        robot.pulsamosBotonDeContadorEnPosicionP1("0");
+        // And pulsamos boton de lista de clics
+        robot.pulsamosBotonDeListaDeClics();
+        // When pulsamos back en lista de clics
+        robot.pulsamosBackEnListaDeClics();
+        // Then mostramos contador en lista en posicion "0" con valor "0"
+        robot.mostramosContadorEnListaEnPosicionP1ConValorP2("0", "0");
+        // And mostramos contador en lista en posicion "1" con valor "3"
+        robot.mostramosContadorEnListaEnPosicionP1ConValorP2("1", "3");
+        // And mostramos contador en lista en posicion "2" con valor "2"
+        robot.mostramosContadorEnListaEnPosicionP1ConValorP2("2", "2");
+        // And mostramos lista de contadores con dimension "3"
+        robot.mostramosListaDeContadoresConDimensionP1("3");
+    }
+
+
+
+
+    ////////// LANDSCAPE TESTS //////////
+
+
+    @Test
+    public void test23PulsarEnSegundoContador() { // 1
+
+        // Given mostramos lista de contadores con dimension "0"
+        robot.mostramosListaDeContadoresConDimensionP1("0");
+        // And pulsamos boton de lista de contadores
+        robot.pulsamosBotonDeListaDeContadores();
+        // And pulsamos boton de lista de contadores
+        robot.pulsamosBotonDeListaDeContadores();
+        // And pulsamos boton de contador en posicion "1"
+        robot.pulsamosBotonDeContadorEnPosicionP1("1");
+        // When rotamos pantalla
+        rotateScreen();
+        // Then mostramos lista de clics con dimension "0"
+        robot.mostramosListaDeClicsConDimensionP1("0");
+    }
+
+
+    @Test
+    public void test26PulsarEnPrimerClicEnSegundoContador() { // 3
+
+        // Given mostramos lista de contadores con dimension "0"
+        robot.mostramosListaDeContadoresConDimensionP1("0");
+        // And pulsamos boton de lista de contadores
+        robot.pulsamosBotonDeListaDeContadores();
+        // And pulsamos boton de lista de contadores
+        robot.pulsamosBotonDeListaDeContadores();
+        // And pulsamos boton de contador en posicion "1"
+        robot.pulsamosBotonDeContadorEnPosicionP1("1");
+        // And pulsamos boton de lista de clics
+        robot.pulsamosBotonDeListaDeClics();
+        // And pulsamos boton de lista de clics
+        robot.pulsamosBotonDeListaDeClics();
+        // And pulsamos boton de clics en posicion "0"
+        robot.pulsamosBotonDeClicsEnPosicionP1("0");
+        // When rotamos pantalla
+        rotateScreen();
+        // Then mostramos clic en lista en posicion "0" con valor "1"
+        robot.mostramosClicEnListaEnPosicionP1ConValorP2("0", "1");
+        // And mostramos clic en lista en posicion "1" con valor "0"
+        robot.mostramosClicEnListaEnPosicionP1ConValorP2("1", "0");
         // And mostramos lista de clics con dimension "2"
         robot.mostramosListaDeClicsConDimensionP1("2");
     }
@@ -183,41 +482,6 @@ public class AdvClickCounterTests { // 18 tests
     }
 
 
-
-    @Test
-    public void test09PulsarBackEnSegundoClicEnSegundoContador() { // 6
-
-        // Given mostramos lista de contadores con dimension "0"
-        robot.mostramosListaDeContadoresConDimensionP1("0");
-        // And pulsamos boton de lista de contadores
-        robot.pulsamosBotonDeListaDeContadores();
-        // And pulsamos boton de lista de contadores
-        robot.pulsamosBotonDeListaDeContadores();
-        // And pulsamos boton de contador en posicion "1"
-        robot.pulsamosBotonDeContadorEnPosicionP1("1");
-        // And pulsamos boton de lista de clics
-        robot.pulsamosBotonDeListaDeClics();
-        // And pulsamos boton de lista de clics
-        robot.pulsamosBotonDeListaDeClics();
-        // And pulsamos boton de clics en posicion "0"
-        robot.pulsamosBotonDeClicsEnPosicionP1("0");
-        // And pulsamos boton de clics en posicion "0"
-        robot.pulsamosBotonDeClicsEnPosicionP1("0");
-        // And pulsamos boton de clics en posicion "1"
-        robot.pulsamosBotonDeClicsEnPosicionP1("1");
-        // When pulsamos back en lista de contadores
-        robot.pulsamosBackEnListaDeContadores();
-        // Then mostramos contador en lista en posicion "0" con valor "0"
-        robot.mostramosContadorEnListaEnPosicionP1ConValorP2("0", "0");
-        // And mostramos contador en lista en posicion "1" con valor "3"
-        robot.mostramosContadorEnListaEnPosicionP1ConValorP2("1", "3"); 
-        // And mostramos lista de contadores con dimension "2"
-        robot.mostramosListaDeContadoresConDimensionP1("2");
-    }
-
-
-
-
     @Test
     public void test29PulsarBackEnSegundoClicEnSegundoContador() { // 7
 
@@ -239,8 +503,8 @@ public class AdvClickCounterTests { // 18 tests
         robot.pulsamosBotonDeClicsEnPosicionP1("0");
         // And pulsamos boton de clics en posicion "1"
         robot.pulsamosBotonDeClicsEnPosicionP1("1");
-        // And pulsamos back en lista de contadores
-        robot.pulsamosBackEnListaDeContadores();
+        // And pulsamos back en lista de clics
+        robot.pulsamosBackEnListaDeClics();
         // When rotamos pantalla
         rotateScreen();
         // Then mostramos contador en lista en posicion "0" con valor "0"
@@ -251,37 +515,6 @@ public class AdvClickCounterTests { // 18 tests
         robot.mostramosListaDeContadoresConDimensionP1("2");
     }
 
-
-    @Test
-    public void test11PulsarEnTercerContador() { // 8
-
-        // Given mostramos lista de contadores con dimension "0"
-        robot.mostramosListaDeContadoresConDimensionP1("0");
-        // And pulsamos boton de lista de contadores
-        robot.pulsamosBotonDeListaDeContadores();
-        // And pulsamos boton de lista de contadores
-        robot.pulsamosBotonDeListaDeContadores();
-        // And pulsamos boton de contador en posicion "1"
-        robot.pulsamosBotonDeContadorEnPosicionP1("1");
-        // And pulsamos boton de lista de clics
-        robot.pulsamosBotonDeListaDeClics();
-        // And pulsamos boton de lista de clics
-        robot.pulsamosBotonDeListaDeClics();
-        // And pulsamos boton de clics en posicion "0"
-        robot.pulsamosBotonDeClicsEnPosicionP1("0");
-        // And pulsamos boton de clics en posicion "0"
-        robot.pulsamosBotonDeClicsEnPosicionP1("0");
-        // And pulsamos boton de clics en posicion "1"
-        robot.pulsamosBotonDeClicsEnPosicionP1("1");
-        // And pulsamos back en lista de contadores
-        robot.pulsamosBackEnListaDeContadores();
-        // And pulsamos boton de lista de contadores
-        robot.pulsamosBotonDeListaDeContadores();
-        // When pulsamos boton de contador en posicion "2"
-        robot.pulsamosBotonDeContadorEnPosicionP1("2");
-        // Then mostramos lista de clics con dimension "0"
-        robot.mostramosListaDeClicsConDimensionP1("0");
-    }
 
 
     @Test
@@ -305,8 +538,8 @@ public class AdvClickCounterTests { // 18 tests
         robot.pulsamosBotonDeClicsEnPosicionP1("0");
         // And pulsamos boton de clics en posicion "1"
         robot.pulsamosBotonDeClicsEnPosicionP1("1");
-        // And pulsamos back en lista de contadores
-        robot.pulsamosBackEnListaDeContadores();
+        // And pulsamos back en lista de clics
+        robot.pulsamosBackEnListaDeClics();
         // And pulsamos boton de lista de contadores
         robot.pulsamosBotonDeListaDeContadores();
         // And pulsamos boton de contador en posicion "2"
@@ -315,42 +548,6 @@ public class AdvClickCounterTests { // 18 tests
         rotateScreen();
         // Then mostramos lista de clics con dimension "0"
         robot.mostramosListaDeClicsConDimensionP1("0");
-    }
-
-
-    @Test
-    public void test12CrearPrimerClicEnTercerContador() { // 10
-
-        // Given mostramos lista de contadores con dimension "0"
-        robot.mostramosListaDeContadoresConDimensionP1("0");
-        // And pulsamos boton de lista de contadores
-        robot.pulsamosBotonDeListaDeContadores();
-        // And pulsamos boton de lista de contadores
-        robot.pulsamosBotonDeListaDeContadores();
-        // And pulsamos boton de contador en posicion "1"
-        robot.pulsamosBotonDeContadorEnPosicionP1("1");
-        // And pulsamos boton de lista de clics
-        robot.pulsamosBotonDeListaDeClics();
-        // And pulsamos boton de lista de clics
-        robot.pulsamosBotonDeListaDeClics();
-        // And pulsamos boton de clics en posicion "0"
-        robot.pulsamosBotonDeClicsEnPosicionP1("0");
-        // And pulsamos boton de clics en posicion "0"
-        robot.pulsamosBotonDeClicsEnPosicionP1("0");
-        // And pulsamos boton de clics en posicion "1"
-        robot.pulsamosBotonDeClicsEnPosicionP1("1");
-        // And pulsamos back en lista de contadores
-        robot.pulsamosBackEnListaDeContadores();
-        // And pulsamos boton de lista de contadores
-        robot.pulsamosBotonDeListaDeContadores();
-        // And pulsamos boton de contador en posicion "2"
-        robot.pulsamosBotonDeContadorEnPosicionP1("2");
-        // When pulsamos boton de lista de clics
-        robot.pulsamosBotonDeListaDeClics();
-        // Then mostramos clic en lista en posicion "0" con valor "0"
-        robot.mostramosClicEnListaEnPosicionP1ConValorP2("0", "0");
-        // And mostramos lista de clics con dimension "1"
-        robot.mostramosListaDeClicsConDimensionP1("1");
     }
 
 
@@ -375,8 +572,8 @@ public class AdvClickCounterTests { // 18 tests
         robot.pulsamosBotonDeClicsEnPosicionP1("0");
         // And pulsamos boton de clics en posicion "1"
         robot.pulsamosBotonDeClicsEnPosicionP1("1");
-        // And pulsamos back en lista de contadores
-        robot.pulsamosBackEnListaDeContadores();
+        // And pulsamos back en lista de clics
+        robot.pulsamosBackEnListaDeClics();
         // And pulsamos boton de lista de contadores
         robot.pulsamosBotonDeListaDeContadores();
         // And pulsamos boton de contador en posicion "2"
@@ -390,44 +587,6 @@ public class AdvClickCounterTests { // 18 tests
         // And mostramos lista de clics con dimension "1"
         robot.mostramosListaDeClicsConDimensionP1("1");
     }
-
-    @Test
-    public void test13PulsarEnPrimerClicEnTercerContador() { // 12
-
-        // Given mostramos lista de contadores con dimension "0"
-        robot.mostramosListaDeContadoresConDimensionP1("0");
-        // And pulsamos boton de lista de contadores
-        robot.pulsamosBotonDeListaDeContadores();
-        // And pulsamos boton de lista de contadores
-        robot.pulsamosBotonDeListaDeContadores();
-        // And pulsamos boton de contador en posicion "1"
-        robot.pulsamosBotonDeContadorEnPosicionP1("1");
-        // And pulsamos boton de lista de clics
-        robot.pulsamosBotonDeListaDeClics();
-        // And pulsamos boton de lista de clics
-        robot.pulsamosBotonDeListaDeClics();
-        // And pulsamos boton de clics en posicion "0"
-        robot.pulsamosBotonDeClicsEnPosicionP1("0");
-        // And pulsamos boton de clics en posicion "0"
-        robot.pulsamosBotonDeClicsEnPosicionP1("0");
-        // And pulsamos boton de clics en posicion "1"
-        robot.pulsamosBotonDeClicsEnPosicionP1("1");
-        // And pulsamos back en lista de contadores
-        robot.pulsamosBackEnListaDeContadores();
-        // And pulsamos boton de lista de contadores
-        robot.pulsamosBotonDeListaDeContadores();
-        // And pulsamos boton de contador en posicion "2"
-        robot.pulsamosBotonDeContadorEnPosicionP1("2");
-        // And pulsamos boton de lista de clics
-        robot.pulsamosBotonDeListaDeClics();
-        // When pulsamos boton de clics en posicion "0"
-        robot.pulsamosBotonDeClicsEnPosicionP1("0");
-        // Then mostramos clic en lista en posicion "0" con valor "1"
-        robot.mostramosClicEnListaEnPosicionP1ConValorP2("0", "1");
-        // And mostramos lista de clics con dimension "1"
-        robot.mostramosListaDeClicsConDimensionP1("1");
-    }
-
 
 
     @Test
@@ -451,8 +610,8 @@ public class AdvClickCounterTests { // 18 tests
         robot.pulsamosBotonDeClicsEnPosicionP1("0");
         // And pulsamos boton de clics en posicion "1"
         robot.pulsamosBotonDeClicsEnPosicionP1("1");
-        // And pulsamos back en lista de contadores
-        robot.pulsamosBackEnListaDeContadores();
+        // And pulsamos back en lista de clics
+        robot.pulsamosBackEnListaDeClics();
         // And pulsamos boton de lista de contadores
         robot.pulsamosBotonDeListaDeContadores();
         // And pulsamos boton de contador en posicion "2"
@@ -467,52 +626,6 @@ public class AdvClickCounterTests { // 18 tests
         robot.mostramosClicEnListaEnPosicionP1ConValorP2("0", "1");
         // And mostramos lista de clics con dimension "1"
         robot.mostramosListaDeClicsConDimensionP1("1");
-    }
-
-
-    @Test
-    public void test15PulsarBackEnPrimerClicEnTercerContador() { // 14
-
-        // Given mostramos lista de contadores con dimension "0"
-        robot.mostramosListaDeContadoresConDimensionP1("0");
-        // And pulsamos boton de lista de contadores
-        robot.pulsamosBotonDeListaDeContadores();
-        // And pulsamos boton de lista de contadores
-        robot.pulsamosBotonDeListaDeContadores();
-        // And pulsamos boton de contador en posicion "1"
-        robot.pulsamosBotonDeContadorEnPosicionP1("1");
-        // And pulsamos boton de lista de clics
-        robot.pulsamosBotonDeListaDeClics();
-        // And pulsamos boton de lista de clics
-        robot.pulsamosBotonDeListaDeClics();
-        // And pulsamos boton de clics en posicion "0"
-        robot.pulsamosBotonDeClicsEnPosicionP1("0");
-        // And pulsamos boton de clics en posicion "0"
-        robot.pulsamosBotonDeClicsEnPosicionP1("0");
-        // And pulsamos boton de clics en posicion "1"
-        robot.pulsamosBotonDeClicsEnPosicionP1("1");
-        // And pulsamos back en lista de contadores
-        robot.pulsamosBackEnListaDeContadores();
-        // And pulsamos boton de lista de contadores
-        robot.pulsamosBotonDeListaDeContadores();
-        // And pulsamos boton de contador en posicion "2"
-        robot.pulsamosBotonDeContadorEnPosicionP1("2");
-        // And pulsamos boton de lista de clics
-        robot.pulsamosBotonDeListaDeClics();
-        // And pulsamos boton de clics en posicion "0"
-        robot.pulsamosBotonDeClicsEnPosicionP1("0");
-        // And pulsamos boton de clics en posicion "0"
-        robot.pulsamosBotonDeClicsEnPosicionP1("0");
-        // When pulsamos back en lista de contadores
-        robot.pulsamosBackEnListaDeContadores();
-        // Then mostramos contador en lista en posicion "0" con valor "0"
-        robot.mostramosContadorEnListaEnPosicionP1ConValorP2("0", "0");
-        // And mostramos contador en lista en posicion "1" con valor "3"
-        robot.mostramosContadorEnListaEnPosicionP1ConValorP2("1", "3");
-        // And mostramos contador en lista en posicion "2" con valor "2"
-        robot.mostramosContadorEnListaEnPosicionP1ConValorP2("2", "2");
-        // And mostramos lista de contadores con dimension "3"
-        robot.mostramosListaDeContadoresConDimensionP1("3");
     }
 
 
@@ -538,8 +651,8 @@ public class AdvClickCounterTests { // 18 tests
         robot.pulsamosBotonDeClicsEnPosicionP1("0");
         // And pulsamos boton de clics en posicion "1"
         robot.pulsamosBotonDeClicsEnPosicionP1("1");
-        // And pulsamos back en lista de contadores
-        robot.pulsamosBackEnListaDeContadores();
+        // And pulsamos back en lista de clics
+        robot.pulsamosBackEnListaDeClics();
         // And pulsamos boton de lista de contadores
         robot.pulsamosBotonDeListaDeContadores();
         // And pulsamos boton de contador en posicion "2"
@@ -550,8 +663,8 @@ public class AdvClickCounterTests { // 18 tests
         robot.pulsamosBotonDeClicsEnPosicionP1("0");
         // And pulsamos boton de clics en posicion "0"
         robot.pulsamosBotonDeClicsEnPosicionP1("0");
-        // And pulsamos back en lista de contadores
-        robot.pulsamosBackEnListaDeContadores();
+        // And pulsamos back en lista de clics
+        robot.pulsamosBackEnListaDeClics();
         // When rotamos pantalla
         rotateScreen();
         // Then mostramos contador en lista en posicion "0" con valor "0"
@@ -562,48 +675,6 @@ public class AdvClickCounterTests { // 18 tests
         robot.mostramosContadorEnListaEnPosicionP1ConValorP2("2", "2");
         // And mostramos lista de contadores con dimension "3"
         robot.mostramosListaDeContadoresConDimensionP1("3");
-    }
-
-
-    @Test
-    public void test16PulsarEnPrimerContador() { // 16
-
-        // Given mostramos lista de contadores con dimension "0"
-        robot.mostramosListaDeContadoresConDimensionP1("0");
-        // And pulsamos boton de lista de contadores
-        robot.pulsamosBotonDeListaDeContadores();
-        // And pulsamos boton de lista de contadores
-        robot.pulsamosBotonDeListaDeContadores();
-        // And pulsamos boton de contador en posicion "1"
-        robot.pulsamosBotonDeContadorEnPosicionP1("1");
-        // And pulsamos boton de lista de clics
-        robot.pulsamosBotonDeListaDeClics();
-        // And pulsamos boton de lista de clics
-        robot.pulsamosBotonDeListaDeClics();
-        // And pulsamos boton de clics en posicion "0"
-        robot.pulsamosBotonDeClicsEnPosicionP1("0");
-        // And pulsamos boton de clics en posicion "0"
-        robot.pulsamosBotonDeClicsEnPosicionP1("0");
-        // And pulsamos boton de clics en posicion "1"
-        robot.pulsamosBotonDeClicsEnPosicionP1("1");
-        // And pulsamos back en lista de contadores
-        robot.pulsamosBackEnListaDeContadores();
-        // And pulsamos boton de lista de contadores
-        robot.pulsamosBotonDeListaDeContadores();
-        // And pulsamos boton de contador en posicion "2"
-        robot.pulsamosBotonDeContadorEnPosicionP1("2");
-        // And pulsamos boton de lista de clics
-        robot.pulsamosBotonDeListaDeClics();
-        // And pulsamos boton de clics en posicion "0"
-        robot.pulsamosBotonDeClicsEnPosicionP1("0");
-        // And pulsamos boton de clics en posicion "0"
-        robot.pulsamosBotonDeClicsEnPosicionP1("0");
-        // And pulsamos back en lista de contadores
-        robot.pulsamosBackEnListaDeContadores();
-        // When pulsamos boton de contador en posicion "0"
-        robot.pulsamosBotonDeContadorEnPosicionP1("0");
-        // Then mostramos lista de clics con dimension "0"
-        robot.mostramosListaDeClicsConDimensionP1("0");
     }
 
 
@@ -628,8 +699,8 @@ public class AdvClickCounterTests { // 18 tests
         robot.pulsamosBotonDeClicsEnPosicionP1("0");
         // And pulsamos boton de clics en posicion "1"
         robot.pulsamosBotonDeClicsEnPosicionP1("1");
-        // And pulsamos back en lista de contadores
-        robot.pulsamosBackEnListaDeContadores();
+        // And pulsamos back en lista de clics
+        robot.pulsamosBackEnListaDeClics();
         // And pulsamos boton de lista de contadores
         robot.pulsamosBotonDeListaDeContadores();
         // And pulsamos boton de contador en posicion "2"
@@ -640,66 +711,14 @@ public class AdvClickCounterTests { // 18 tests
         robot.pulsamosBotonDeClicsEnPosicionP1("0");
         // And pulsamos boton de clics en posicion "0"
         robot.pulsamosBotonDeClicsEnPosicionP1("0");
-        // And pulsamos back en lista de contadores
-        robot.pulsamosBackEnListaDeContadores();
+        // And pulsamos back en lista de clics
+        robot.pulsamosBackEnListaDeClics();
         // And pulsamos boton de contador en posicion "0"
         robot.pulsamosBotonDeContadorEnPosicionP1("0");
         // When rotamos pantalla
         rotateScreen();
         // Then mostramos lista de clics con dimension "0"
         robot.mostramosListaDeClicsConDimensionP1("0");
-    }
-
-
-    @Test
-    public void test18PulsarBackEnPrimerClicEnPrimerContador() { // 18
-
-        // Given mostramos lista de contadores con dimension "0"
-        robot.mostramosListaDeContadoresConDimensionP1("0");
-        // And pulsamos boton de lista de contadores
-        robot.pulsamosBotonDeListaDeContadores();
-        // And pulsamos boton de lista de contadores
-        robot.pulsamosBotonDeListaDeContadores();
-        // And pulsamos boton de contador en posicion "1"
-        robot.pulsamosBotonDeContadorEnPosicionP1("1");
-        // And pulsamos boton de lista de clics
-        robot.pulsamosBotonDeListaDeClics();
-        // And pulsamos boton de lista de clics
-        robot.pulsamosBotonDeListaDeClics();
-        // And pulsamos boton de clics en posicion "0"
-        robot.pulsamosBotonDeClicsEnPosicionP1("0");
-        // And pulsamos boton de clics en posicion "0"
-        robot.pulsamosBotonDeClicsEnPosicionP1("0");
-        // And pulsamos boton de clics en posicion "1"
-        robot.pulsamosBotonDeClicsEnPosicionP1("1");
-        // And pulsamos back en lista de contadores
-        robot.pulsamosBackEnListaDeContadores();
-        // And pulsamos boton de lista de contadores
-        robot.pulsamosBotonDeListaDeContadores();
-        // And pulsamos boton de contador en posicion "2"
-        robot.pulsamosBotonDeContadorEnPosicionP1("2");
-        // And pulsamos boton de lista de clics
-        robot.pulsamosBotonDeListaDeClics();
-        // And pulsamos boton de clics en posicion "0"
-        robot.pulsamosBotonDeClicsEnPosicionP1("0");
-        // And pulsamos boton de clics en posicion "0"
-        robot.pulsamosBotonDeClicsEnPosicionP1("0");
-        // And pulsamos back en lista de contadores
-        robot.pulsamosBackEnListaDeContadores();
-        // And pulsamos boton de contador en posicion "0"
-        robot.pulsamosBotonDeContadorEnPosicionP1("0");
-        // And pulsamos boton de lista de clics
-        robot.pulsamosBotonDeListaDeClics();
-        // When pulsamos back en lista de contadores
-        robot.pulsamosBackEnListaDeContadores();
-        // Then mostramos contador en lista en posicion "0" con valor "0"
-        robot.mostramosContadorEnListaEnPosicionP1ConValorP2("0", "0");
-        // And mostramos contador en lista en posicion "1" con valor "3"
-        robot.mostramosContadorEnListaEnPosicionP1ConValorP2("1", "3");
-        // And mostramos contador en lista en posicion "2" con valor "2"
-        robot.mostramosContadorEnListaEnPosicionP1ConValorP2("2", "2");
-        // And mostramos lista de contadores con dimension "3"
-        robot.mostramosListaDeContadoresConDimensionP1("3");
     }
 
 
